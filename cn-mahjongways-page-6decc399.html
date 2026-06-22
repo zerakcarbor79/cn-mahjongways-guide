@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>麻将胡了 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f4f6;
+      color: #2c2e30;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      background: linear-gradient(145deg, #eef0f2 0%, #dde1e6 100%);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f2328;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #4b5158;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+      border-top: 1px solid #c8cdd3;
+      padding-top: 1rem;
+    }
+
+    /* 卡片通用设计 */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e5e9ed;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f2328;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eef1f5;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 450;
+      color: #31363c;
+      margin: 1.25rem 0 0.4rem;
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+      color: #3b4147;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .card ul li {
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+      color: #3b4147;
+    }
+
+    .card ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.3rem;
+      color: #8b929b;
+      font-weight: 600;
+    }
+
+    .inline-link {
+      color: #2c5775;
+      text-decoration: none;
+      border-bottom: 1px solid #b6c9db;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #183b51;
+      border-bottom-color: #2c5775;
+    }
+
+    /* 底部访问提示卡片 */
+    .footer-card {
+      background: #e9edf2;
+      border-radius: 20px;
+      padding: 2rem 2rem;
+      margin-top: 1.2rem;
+      border: 1px solid #d3d9e0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .footer-card p {
+      font-size: 1.05rem;
+      color: #2d353e;
+    }
+
+    .footer-card .note {
+      display: inline-block;
+      background: #dfe4ea;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #4d5762;
+      margin-top: 0.7rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.75rem;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 16px;
+      }
+
+      .card h2 {
+        font-size: 1.3rem;
+      }
+
+      .footer-card {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero .sub {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 首页横幅 hero -->
+  <header class="hero">
+    <h1>麻将胡了 · 简明指南</h1>
+    <div class="sub">从规则基础到常见思路，一份温和的参考笔记。</div>
+  </header>
+
+  <!-- 背景说明卡片 -->
+  <section class="card">
+    <h2>背景与初衷</h2>
+    <p>麻将作为一种多人桌面游戏，其趣味与策略并存。很多人最初接触时，往往被繁多的番种和地域差异困扰。这个页面意在提供一份清晰、不浮夸的介绍，帮助新朋友更快建立整体认识。</p>
+    <p>这里不兜售必胜秘诀，也不渲染夸张收益。我们相信，了解规则、培养习惯，比任何捷径都更可靠。无论是国标、日本麻将还是地方玩法，核心的逻辑始终相通。</p>
+  </section>
+
+  <!-- 三段自然介绍：特点 + 场景 + 常见问题摘要 -->
+  <section class="card">
+    <h2>特点与思路</h2>
+    <div>
+      <h3>番型与算分</h3>
+      <p>每种胡牌方式对应不同番数，熟悉基础番型（平和、断幺、自摸等）是第一步。多数规则都围绕面子、雀头以及特殊牌型展开，记牢常用组合能有效减少犹豫。</p>
+    </div>
+    <div>
+      <h3>防守与判断</h3>
+      <p>麻将不只有进攻。通过舍牌、鸣牌以及对手的动作，可以推测其可能听牌的范围。养成观察的习惯，有时比追求大牌更实际。</p>
+    </div>
+    <div>
+      <h3>常见习惯建议</h3>
+      <ul>
+        <li>起手先整理手牌，快速判断可能的牌型方向。</li>
+        <li>避免过早暴露听牌意图，尤其在多面听时。</li>
+        <li>留意宝牌（悬赏牌）对自己和对手的影响。</li>
+        <li>心态平缓，不因连续不进张而冒进。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 第三段介绍：场景与提醒 -->
+  <section class="card">
+    <h2>场景与提醒</h2>
+    <p>朋友聚会时，常常会遇到节奏差异——有人偏好速胡，有人追求大牌。提前约好规则（如是否允许食胡、起胡番数、赤宝牌等）能让过程更顺畅。线上平台同样存在不同房间规则，入场前请仔细确认说明。</p>
+    <p>另外，长时间对局容易疲劳，适当休息有助于保持判断力。遇到争议时，平和沟通比争执更重要。</p>
+  </section>
+
+  <!-- 页尾访问提示 (自然嵌入链接) -->
+  <div class="footer-card">
+    <p>若想进一步了解规则细节或寻找对局平台，可参考 <a href="https://cn-mahjongways.com" class="inline-link">麻将胡了</a> 整理的资料与指南。</p>
+    <span class="note">浏览时请注意信息安全，合理安排时间</span>
+  </div>
+
+</div>
+</body>
+</html>
